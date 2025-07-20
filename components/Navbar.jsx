@@ -10,7 +10,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDivision, setMobileDivision] = useState(false)
   const pathname = usePathname();
-  const handleClick = () => setMobileDivision(!mobileDivision)
+  const handleClick = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+  const handleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -24,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed top-0 w-full bg-[#F7F7F8]/90 backdrop-blur-md z-50 border-b border-[#E5E5E6]">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="px-6 md:px-12 lg:px-28">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="">
@@ -50,10 +51,10 @@ const Navbar = () => {
               {/* Divisions Dropdown */}
               <div 
                 className="relative"
-                onClick={() => setIsDropdownOpen(true)}
+                onClick={handleDropdown}
               >
                 <button 
-                  className={`flex items-center text-[#1F1F1F] hover:text-[#0C4C5B] transition-colors ${pathname.includes('/divisions') ? 'font-medium' : 'font-light'}`}
+                  className={`flex items-center cursor-pointer text-[#1F1F1F] hover:text-[#0C4C5B] transition-colors ${pathname.includes('/divisions') ? 'font-medium' : 'font-light'}`}
                 >
                   Divisions
                   <svg 
@@ -106,7 +107,7 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              <div className={`w-6 h-6 flex flex-col justify-between transition-all duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`}>
+              <div className={`w-6 h-6 flex flex-col cursor-pointer justify-between transition-all duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`}>
                 <span className={`block h-1 w-full bg-[#1F1F1F] transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
                 <span className={`block h-1 w-full bg-[#1F1F1F] transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
                 <span className={`block h-1 w-full bg-[#1F1F1F] transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
@@ -141,6 +142,7 @@ const Navbar = () => {
               <Link 
                 href="/" 
                 className={`block py-3 px-4 rounded-md ${pathname === '/' ? 'bg-[#0C4C5B]/10 text-[#0C4C5B]' : 'text-[#1F1F1F] hover:bg-[#E5E5E6]'}`}
+                onClick={handleClick}
               >
                 Home
               </Link>
@@ -148,6 +150,7 @@ const Navbar = () => {
               <Link 
                 href="/about" 
                 className={`block py-3 px-4 rounded-md ${pathname === '/about' ? 'bg-[#0C4C5B]/10 text-[#0C4C5B]' : 'text-[#1F1F1F] hover:bg-[#E5E5E6]'}`}
+                onClick={handleClick}
               >
                 About
               </Link>
@@ -173,16 +176,16 @@ const Navbar = () => {
                 {mobileDivision && (
                     <div className=" pl-6 space-y-2 transition-all duration-300 ease-in-out">
                     <Link 
-                      // onClick={handleClick}
                       href="/regalo-pack" 
                       className={`block py-2 px-4 rounded-md ${pathname === '/divisions/regalo-pack' ? 'bg-[#0C4C5B]/10 text-[#0C4C5B]' : 'text-[#1F1F1F] hover:bg-[#E5E5E6]'}`}
+                      onClick={handleClick}
                     >
                       Regalo Pack
                     </Link>
                     <Link 
-                      // onClick={handleClick}
                       href="/mostrar-pack" 
                       className={`block py-2 px-4 rounded-md ${pathname === '/divisions/mostrar-pack' ? 'bg-[#B29B77]/10 text-[#B29B77]' : 'text-[#1F1F1F] hover:bg-[#E5E5E6]'}`}
+                      onClick={handleClick}
                     >
                       Mostrar Pack
                     </Link>
@@ -194,6 +197,7 @@ const Navbar = () => {
               <Link 
                 href="/contact" 
                 className={`block py-3 px-4 rounded-md ${pathname === '/contact' ? 'bg-[#0C4C5B]/10 text-[#0C4C5B]' : 'text-[#1F1F1F] hover:bg-[#E5E5E6]'}`}
+                onClick={handleClick}
               >
                 Contact
               </Link>
@@ -204,6 +208,7 @@ const Navbar = () => {
               <Link 
                 href="/contact" 
                 className="block w-full px-6 py-3 bg-[#B29B77] text-white text-center rounded-md hover:bg-[#9c8765] transition-colors font-light"
+                onClick={handleClick}
               >
                 Get in Touch
               </Link>

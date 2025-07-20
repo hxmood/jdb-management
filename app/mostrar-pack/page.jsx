@@ -16,7 +16,7 @@ const MostrarPackPage = () => {
     <div className="bg-[#F7F7F8] py-32">
       {/* Hero Section */}
       <section className="relative ">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
               <span className="font-medium">Mostrar Pack</span>
@@ -31,7 +31,7 @@ const MostrarPackPage = () => {
 
       {/* Introduction */}
       <section className="py-20">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2 order-2 lg:order-1">
               <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6">
@@ -70,7 +70,7 @@ const MostrarPackPage = () => {
 
       {/* Gallery & Collections */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-16 text-center">
             Display <span className="font-medium">Collections</span>
           </h2>
@@ -126,7 +126,7 @@ const MostrarPackPage = () => {
 
       {/* Retail Solutions */}
       <section className="py-20">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6">
               Complete <span className="font-medium">Retail Solutions</span>
@@ -160,7 +160,7 @@ const MostrarPackPage = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0C4C5B] text-white">
-        <div className="container mx-auto px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
             Transform Your Retail Space
           </h2>

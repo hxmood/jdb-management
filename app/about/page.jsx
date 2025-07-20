@@ -7,7 +7,7 @@ const AboutPage = () => {
     <div className="bg-[#F7F7F8] py-32">
       {/* Hero Section */}
       <section className="relative ">
-        <div className="container mx-auto px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
             Our <span className="font-medium">Story</span> & <span className="font-medium">Approach</span>
           </h1>

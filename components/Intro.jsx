@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 const AboutJDB = () => {
   return (
-    <section className="bg-[#F7F7F8] py-20">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <section className="bg-[#F7F7F8] py-20 w-full">
+      <div className=" px-6 md:px-12 lg:px-28">
+        <div className="w-full flex flex-col-reverse lg:flex-row items-center gap-20">
           {/* Image/Visual Element */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 w-full relative">
             <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/images/DB3.jpg" // Replace with your image
@@ -23,7 +23,7 @@ const AboutJDB = () => {
           </div>
 
           {/* Text Content */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 w-full">
             <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6">
               The <span className="font-medium">JDB</span> Management Community
             </h2>

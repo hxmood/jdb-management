@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-[#1F1F1F] text-[#F7F7F8] pt-16 pb-8">
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">
           {/* JDB Management Info */}
