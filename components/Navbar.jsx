@@ -22,6 +22,20 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
+  // useEffect(() => {
+  //   const handleOutsideClick = (e) => {
+  //     if (isDropdownOpen) {
+  //       setIsDropdownOpen(false)
+  //     }
+  //   }
+
+  //   document.body.addEventListener("click", handleOutsideClick);
+
+  //   // return () => {
+  //   //   document.body.removeEventListener("click", handleOutsideClick);
+  //   // };
+  // }, [isDropdownOpen])
+
   return (
     <>
       <header className="fixed top-0 w-full bg-[#F7F7F8]/90 backdrop-blur-md z-50 border-b border-[#E5E5E6]">
