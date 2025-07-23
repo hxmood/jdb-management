@@ -40,7 +40,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-[#0C4C5B]/10 rounded-2xl -rotate-6"></div>
               <div className="absolute inset-0 bg-white rounded-2xl shadow-xl overflow-hidden">
                 <Image 
-                  src="/images/mix1.jpg" 
+                  src="/images/Mix1.jpg" 
                   alt="Luxury jewellery packaging"
                   fill
                   className="object-cover"

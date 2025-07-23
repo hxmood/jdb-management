@@ -10,7 +10,7 @@ const AboutJDB = () => {
           <div className="lg:w-1/2 w-full relative">
             <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/DB3.jpg" // Replace with your image
+                src="/images/Db3.jpg" // Replace with your image
                 alt="JDB Management overseeing premium manufacturing"
                 fill
                 className="object-cover"

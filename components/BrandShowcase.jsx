@@ -8,7 +8,7 @@ const DivisionsPreview = () => {
       name: 'Regalo Pack',
       description: 'Premium jewellery boxes crafted with precision and luxury materials',
       href: '/divisions/regalo-pack',
-      image: '/images/diamond Box 1.png',
+      image: '/images/Diamond Box 1.png',
       accentColor: 'bg-[#0C4C5B]' // Deep Teal
     },
     {
