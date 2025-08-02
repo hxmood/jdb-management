@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -9,8 +9,14 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDivision, setMobileDivision] = useState(false)
+  const dropdownRef = useRef(null);
+
   const pathname = usePathname();
-  const handleClick = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+  const handleClick = () => {
+    setIsMobileMenuOpen(false);
+    setMobileDivision(false);
+  };
+  
   const handleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
 
   // Prevent body scroll when mobile menu is open
@@ -22,19 +28,18 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
-  // useEffect(() => {
-  //   const handleOutsideClick = (e) => {
-  //     if (isDropdownOpen) {
-  //       setIsDropdownOpen(false)
-  //     }
-  //   }
+  // Prevent dropdown from closing when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
-  //   document.body.addEventListener("click", handleOutsideClick);
 
-  //   // return () => {
-  //   //   document.body.removeEventListener("click", handleOutsideClick);
-  //   // };
-  // }, [isDropdownOpen])
 
   return (
     <>
@@ -66,6 +71,7 @@ const Navbar = () => {
               <div 
                 className="relative"
                 onClick={handleDropdown}
+                ref={dropdownRef}
               >
                 <button 
                   className={`flex items-center cursor-pointer text-[#1F1F1F] hover:text-[#0C4C5B] transition-colors ${pathname.includes('/divisions') ? 'font-medium' : 'font-light'}`}

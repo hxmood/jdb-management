@@ -1,8 +1,15 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const DivisionsPreview = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const divisions = [
     {
       name: 'Regalo Pack',
@@ -15,7 +22,7 @@ const DivisionsPreview = () => {
       name: 'Mostrar Pack',
       description: 'Luxurious jewellery displays designed to showcase brilliance',
       href: '/divisions/mostrar-pack',
-      image: '/images/moster.jpg',
+      image: '/images/moster.png',
       accentColor: 'bg-[#B29B77]' // Gold-Bronze
     }
   ];
@@ -24,7 +31,7 @@ const DivisionsPreview = () => {
     <section className="bg-white py-20">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
           <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-4">
             Our <span className="font-medium">Manufacturing Divisions</span>
           </h2>
@@ -42,7 +49,7 @@ const DivisionsPreview = () => {
               className="group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
             >
               {/* Image with overlay */}
-              <div className="relative aspect-[5/4]">
+              <div className="relative aspect-[5/4] ">
                 <Image
                   src={division.image}
                   alt={division.name}

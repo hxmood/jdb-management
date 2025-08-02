@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Thumbs, FreeMode } from 'swiper/modules';
@@ -7,14 +7,21 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const RegaloPackPage = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <div className="bg-[#F7F7F8] py-32">
       {/* Hero Section */}
-      <section className="relative ">
+      <section className="relative " data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 ">
@@ -32,10 +39,10 @@ const RegaloPackPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="lg:w-1/2">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+            <div className="w-full lg:w-1/2">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-500 hover:shadow-2xl" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="200">
                 <Image
-                  src="/images/Db3.jpg"
+                  src="/images/Db3.png"
                   alt="Regalo Pack craftsmanship"
                   fill
                   className="object-cover"
@@ -44,20 +51,20 @@ const RegaloPackPage = () => {
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6">
+              <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="200">
                 The Art of <span className="font-medium">Premium Packaging</span>
               </h2>
-              <p className="text-[#7A7A7A] font-light mb-6">
+              <p className="text-[#7A7A7A] font-light mb-6" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="200">
                 Since 2012, Regalo Pack has set the standard for luxury jewellery packaging. Each piece is meticulously crafted 
                 to not just protect, but to elevate the presentation of fine jewellery, creating an unboxing experience as 
                 exquisite as the treasures within.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="border-l-2 border-[#0C4C5B] pl-4">
+                <div className="border-l-2 border-[#0C4C5B] pl-4" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="400">
                   <p className="text-[#7A7A7A] font-light text-sm">Materials</p>
                   <p className="text-[#1F1F1F]">Italian leathers · Fine woods · Silk linings</p>
                 </div>
-                <div className="border-l-2 border-[#0C4C5B] pl-4">
+                <div className="border-l-2 border-[#0C4C5B] pl-4" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="600">
                   <p className="text-[#7A7A7A] font-light text-sm">Capabilities</p>
                   <p className="text-[#1F1F1F]">Custom designs · Embossing · Precision fit</p>
                 </div>
@@ -70,37 +77,47 @@ const RegaloPackPage = () => {
       {/* Gallery Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-16 text-center" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
             Our <span className="font-medium">Collections</span>
           </h2>
           
           {/* Main Gallery Slider */}
-          <div className="mb-4">
-            <Swiper
-              spaceBetween={10}
-              navigation={true}
-              thumbs={{ swiper: thumbsSwiper }}
-              modules={[Navigation, Thumbs]}
-              className="rounded-xl shadow-sm"
-            >
-              {galleryItems.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={4}
+            navigation={true}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[Navigation, Thumbs]}
+            className="rounded-xl shadow-sm"
+            breakpoints={{
+              0: {
+                slidesPerView: 1, // 1 slide on small screens (e.g., mobile)
+              },
+              640: {
+                slidesPerView: 2, // 2 slides on tablets
+              },
+              1024: {
+                slidesPerView: 4, // 4 slides on desktop
+              },
+        }}
+>
+  {galleryItems.map((item, index) => (
+    <SwiperSlide key={index}>
+      <div className="relative aspect-[12/9]">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
           {/* Thumbnail Slider */}
           <div>
-            <Swiper
+            {/* <Swiper
               onSwiper={setThumbsSwiper}
               spaceBetween={10}
               slidesPerView={4}
@@ -121,7 +138,7 @@ const RegaloPackPage = () => {
                   </div>
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper> */}
           </div>
           
           {/* Collection Info */}
@@ -131,7 +148,7 @@ const RegaloPackPage = () => {
               Our curated collections represent the pinnacle of jewellery packaging design, available in custom configurations 
               to meet your exact specifications.
             </p>
-            <button className="px-8 py-3 bg-[#B29B77] text-white rounded-md hover:bg-[#9c8765] transition-colors duration-300 font-light">
+            <button className="px-8 py-3 bg-[#B29B77] text-white rounded-md hover:bg-[#9c8765] transition-colors duration-300 font-light" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="200">
               Request Lookbook
             </button>
           </div>
@@ -184,28 +201,43 @@ const RegaloPackPage = () => {
 const galleryItems = [
   {
     title: "Velvet Collection",
-    image: "/images/DB5.jpg",
-    thumb: "/images/DB5.jpg"
+    image: "/images/DB3.png",
+    thumb: "/images/DB5.png"
   },
   {
     title: "Wood Marquetry Series",
-    image: "/images/DB5.jpg",
-    thumb: "/images/DB5.jpg"
+    image: "/images/DB5.png",
+    thumb: "/images/DB5.png"
   },
   {
     title: "Leather Heritage Line",
-    image: "/images/DB5.jpg",
-    thumb: "/images/DB5.jpg"
+    image: "/images/DB6.png",
+    thumb: "/images/DB5.png"
   },
   {
     title: "Modern Minimalist",
-    image: "/images/regalo-DB5.jpg",
-    thumb: "/images/DB5.jpg"
+    image: "/images/DB7.png",
+    thumb: "/images/DB5.png"
   },
   {
     title: "Art Deco Inspired",
-    image: "/images/regalo-DB5.jpg",
-    thumb: "/images/DB5.jpg"
+    image: "/images/DB8.png",
+    thumb: "/images/DB5.png"
+  },
+  {
+    title: "Art Deco Inspired",
+    image: "/images/Mix1.png",
+    thumb: "/images/DB5.png"
+  },
+  {
+    title: "Art Deco Inspired",
+    image: "/images/round box 1.png",
+    thumb: "/images/DB5.png"
+  },
+  {
+    title: "Art Deco Inspired",
+    image: "/images/Diamond Box 1.png",
+    thumb: "/images/DB5.png"
   }
 ];
 

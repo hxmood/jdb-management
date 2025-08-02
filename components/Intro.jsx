@@ -8,9 +8,9 @@ const AboutJDB = () => {
         <div className="w-full flex flex-col-reverse lg:flex-row items-center gap-20">
           {/* Image/Visual Element */}
           <div className="lg:w-1/2 w-full relative">
-            <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-500 hover:shadow-2xl" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
               <Image
-                src="/images/Db3.jpg" // Replace with your image
+                src="/images/box6.png" // Replace with your image
                 alt="JDB Management overseeing premium manufacturing"
                 fill
                 className="object-cover"
@@ -24,11 +24,11 @@ const AboutJDB = () => {
 
           {/* Text Content */}
           <div className="lg:w-1/2 w-full">
-            <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6">
+            <h2 className="text-3xl md:text-4xl font-light text-[#1F1F1F] mb-6" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-sine">
               The <span className="font-medium">JDB</span> Management Community
             </h2>
             
-            <p className="text-[#7A7A7A] text-lg mb-6">
+            <p className="text-[#7A7A7A] text-lg mb-6" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-sine">
               JDB Management is a distinguished collective overseeing exceptional craftsmanship 
               in luxury packaging and display solutions. We provide strategic leadership, 
               operational excellence, and visionary direction to our specialized manufacturing 
@@ -36,7 +36,7 @@ const AboutJDB = () => {
             </p>
             
             <div className="space-y-4 mb-8">
-              <div className="flex items-start">
+              <div className="flex items-start" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="100">
                 <div className="flex-shrink-0 mt-1 mr-4 text-[#B29B77]">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -47,7 +47,7 @@ const AboutJDB = () => {
                 </p>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="300">
                 <div className="flex-shrink-0 mt-1 mr-4 text-[#B29B77]">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -58,7 +58,7 @@ const AboutJDB = () => {
                 </p>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine" data-aos-delay="500">
                 <div className="flex-shrink-0 mt-1 mr-4 text-[#B29B77]">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

@@ -1,8 +1,15 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroSection = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <section className="relative bg-[#F7F7F8] min-h-screen flex items-center">
       {/* Background elements */}
@@ -36,11 +43,11 @@ const HeroSection = () => {
 
           {/* Image/content showcase - made more responsive */}
           <div className="lg:w-1/2 relative order-2 w-full">
-            <div className="relative aspect-square w-full max-w-lg mx-auto">
+            <div className="relative aspect-square w-full max-w-lg mx-auto" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-sine">
               <div className="absolute inset-0 bg-[#0C4C5B]/10 rounded-2xl -rotate-6"></div>
               <div className="absolute inset-0 bg-white rounded-2xl shadow-xl overflow-hidden">
                 <Image 
-                  src="/images/Mix1.jpg" 
+                  src="/images/box hero.png" 
                   alt="Luxury jewellery packaging"
                   fill
                   className="object-cover"

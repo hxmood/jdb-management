@@ -1,8 +1,14 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import AboutJDB from '@/components/Intro';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AboutPage = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <div className="bg-[#F7F7F8] py-32">
       {/* Hero Section */}
@@ -63,7 +69,7 @@ const AboutPage = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="bg-[#F7F7F8] p-8 rounded-xl">
+            <div className="bg-[#F7F7F8] p-8 rounded-xl" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-sine">
               <div className="w-16 h-16 bg-[#0C4C5B] rounded-full flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -75,7 +81,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-[#F7F7F8] p-8 rounded-xl">
+            <div className="bg-[#F7F7F8] p-8 rounded-xl" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-easing="ease-in-sine">
               <div className="w-16 h-16 bg-[#B29B77] rounded-full flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
